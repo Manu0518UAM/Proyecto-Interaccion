@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TareaFlow Pro</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>TareaFlow</h1>
+  <p id="contador"></p>
+</header>
+
+<div class="container">
+
+  <input type="text" id="tarea" placeholder="Nombre de la tarea">
+
+  <select id="materia">
+    <option value="">Materia</option>
+    <option>Lab Tematico IV</option>
+    <option>Interaccion Humano-Computadora</option>
+    <option>Corrientes Psicologicas</option>
+    <option>Integracion de Sistemas</option>
+    <option>Seminario de Comunicacion</option>
+  </select>
+
+  <select id="prioridad">
+    <option value="">Prioridad</option>
+    <option>Alta</option>
+    <option>Media</option>
+    <option>Baja</option>
+  </select>
+
+  <input type="date" id="fecha">
+
+  <button onclick="agregarTarea()">Agregar tarea</button>
+
+  <input type="text" id="buscar" placeholder="Buscar tarea..." oninput="mostrar()">
+
+  <select id="filtroMateria" onchange="mostrar()">
+    <option value="">Todas las materias</option>
+    <option>Lab Tematico IV</option>
+    <option>Interaccion Humano-Computadora</option>
+    <option>Corrientes Psicologicas</option>
+    <option>Integracion de Sistemas</option>
+    <option>Seminario de Comunicacion</option>
+  </select>
+
+  <select id="filtroPrioridad" onchange="mostrar()">
+    <option value="">Todas las prioridades</option>
+    <option>Alta</option>
+    <option>Media</option>
+    <option>Baja</option>
+  </select>
+
+  <select id="orden" onchange="mostrar()">
+    <option value="">Ordenar</option>
+    <option value="fecha">Por fecha</option>
+    <option value="prioridad">Por prioridad</option>
+  </select>
+
+  <div id="lista"></div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
