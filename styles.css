@@ -109,19 +109,20 @@ button:hover {
   padding: 10px;
 }
 
-input[type="date"] {
-  appearance: none;
-  -webkit-appearance: none;
+.input-fecha {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
   background: white;
-  color: #1f2937;
-  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-/* Mejora visual */
-input[type="date"]::-webkit-datetime-edit {
-  color: #1f2937;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(0.4);
+.input-fecha .icono {
+  font-size: 16px;
 }

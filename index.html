@@ -3,65 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TareaFlow Pro</title>
+<title>TareaFlow</title>
 <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header>
-  <h1>TareaFlow</h1>
-  <p id="contador"></p>
-</header>
+<header>TareaFlow</header>
 
 <div class="container">
 
-  <input type="text" id="tarea" placeholder="Nombre de la tarea">
+  <div class="card">
 
-  <select id="materia">
-    <option value="">Materia</option>
-    <option>Lab Tematico IV</option>
-    <option>Interaccion Humano-Computadora</option>
-    <option>Corrientes Psicologicas</option>
-    <option>Integracion de Sistemas</option>
-    <option>Seminario de Comunicacion</option>
-  </select>
+    <input id="tarea" placeholder="Nombre de la tarea">
 
-  <select id="prioridad">
-    <option value="">Prioridad</option>
-    <option>Alta</option>
-    <option>Media</option>
-    <option>Baja</option>
-  </select>
+    <select id="materia">
+      <option value="">Selecciona materia</option>
+      <option>Lab Tematico IV</option>
+      <option>Interaccion Humano-Computadora</option>
+      <option>Corrientes Psicologicas</option>
+      <option>Integracion de Sistemas</option>
+      <option>Seminario de Comunicacion</option>
+    </select>
 
-  <input type="date" id="fecha">
+    <select id="prioridad">
+      <option value="">Selecciona prioridad</option>
+      <option>Alta</option>
+      <option>Media</option>
+      <option>Baja</option>
+    </select>
 
-  <button onclick="agregarTarea()">Agregar tarea</button>
+    <div class="input-fecha" onclick="abrirFecha()">
+    <span id="textoFecha">Seleccionar fecha</span>
+    <span class="icono">📅</span>
+    </div>
 
-  <input type="text" id="buscar" placeholder="Buscar tarea..." oninput="mostrar()">
+    <input type="date" id="fecha" style="display:none">
 
-  <select id="filtroMateria" onchange="mostrar()">
-    <option value="">Todas las materias</option>
-    <option>Lab Tematico IV</option>
-    <option>Interaccion Humano-Computadora</option>
-    <option>Corrientes Psicologicas</option>
-    <option>Integracion de Sistemas</option>
-    <option>Seminario de Comunicacion</option>
-  </select>
+    <button onclick="agregarTarea()">Agregar tarea</button>
 
-  <select id="filtroPrioridad" onchange="mostrar()">
-    <option value="">Todas las prioridades</option>
-    <option>Alta</option>
-    <option>Media</option>
-    <option>Baja</option>
-  </select>
+  </div>
 
-  <select id="orden" onchange="mostrar()">
-    <option value="">Ordenar</option>
-    <option value="fecha">Por fecha</option>
-    <option value="prioridad">Por prioridad</option>
-  </select>
-
-  <div id="lista"></div>
+  <button onclick="window.location.href='tareas.html'">Ver tareas</button>
+  <button class="secondary" onclick="window.location.href='ayuda.html'">Ayuda</button>
 
 </div>
 
