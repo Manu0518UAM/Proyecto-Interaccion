@@ -1,57 +1,127 @@
+:root {
+  --primary: #4f46e5;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --radius: 16px;
+}
+
 body {
   margin: 0;
-  font-family: Arial;
-  background: #f5f7fa;
+  font-family: 'Segoe UI', Arial;
+  background: var(--bg);
+  color: var(--text);
 }
 
+/* HEADER */
 header {
-  background: linear-gradient(135deg, #007bff, #0056b3);
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
   color: white;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
-  position: sticky;
-  top: 0;
-}
-
-.container {
-  padding: 15px;
-  max-width: 420px;
-  margin: auto;
-}
-
-input, select, button {
-  width: 100%;
-  padding: 12px;
-  margin: 6px 0;
-  border-radius: 10px;
-  border: none;
-  font-size: 15px;
-}
-
-button {
-  background: #007bff;
-  color: white;
+  font-size: 20px;
   font-weight: bold;
 }
 
+/* CONTENEDOR */
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* TARJETAS */
 .card {
-  background: white;
-  padding: 12px;
-  margin: 10px 0;
+  background: var(--card);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 14px;
   border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border: 1px solid #ddd;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* BOTONES */
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
   transition: 0.2s;
 }
 
-.card:hover {
-  transform: scale(1.02);
+button.secondary {
+  background: #e5e7eb;
+  color: black;
 }
 
-.alta { border-left: 6px solid #ff3b3b; }
-.media { border-left: 6px solid #ffc107; }
-.baja { border-left: 6px solid #28a745; }
+button:hover {
+  transform: scale(1.03);
+}
 
+/* LISTA */
+.task {
+  background: white;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* PRIORIDADES */
+.alta { border-left: 6px solid #ef4444; }
+.media { border-left: 6px solid #f59e0b; }
+.baja { border-left: 6px solid #22c55e; }
+
+/* COMPLETADA */
 .completada {
-  opacity: 0.6;
+  opacity: 0.5;
   text-decoration: line-through;
+}
+
+/* BOTONES INTERNOS */
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.actions button {
+  flex: 1;
+  font-size: 13px;
+  padding: 10px;
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: white;
+  color: #1f2937;
+  padding-right: 10px;
+}
+
+/* Mejora visual */
+input[type="date"]::-webkit-datetime-edit {
+  color: #1f2937;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.4);
 }
