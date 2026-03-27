@@ -112,21 +112,26 @@ function toggle(i) {
 /* 🔥 IMPORTANTE: EJECUTAR AL CARGAR */
 document.addEventListener("DOMContentLoaded", mostrar);
 
-/* ABRIR CALENDARIO */
 function abrirFecha() {
   document.getElementById("fecha").showPicker();
 }
 
-/* MOSTRAR FECHA SELECCIONADA */
 document.addEventListener("DOMContentLoaded", () => {
   const fechaInput = document.getElementById("fecha");
+  const texto = document.getElementById("textoFecha");
+  const contenedor = document.querySelector(".input-fecha");
+
   if (!fechaInput) return;
 
   fechaInput.addEventListener("change", () => {
     const valor = fechaInput.value;
 
     if (valor) {
-      document.getElementById("textoFecha").innerText = valor;
+      const fechaFormateada = new Date(valor).toLocaleDateString();
+
+      texto.innerText = fechaFormateada;
+      texto.classList.remove("placeholder");
+      contenedor.classList.add("activo");
     }
   });
 });

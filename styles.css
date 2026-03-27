@@ -126,3 +126,25 @@ button:hover {
 .input-fecha .icono {
   font-size: 16px;
 }
+
+.placeholder {
+  color: #9ca3af; /* gris claro tipo placeholder */
+}
+
+.input-fecha {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Cuando ya hay fecha */
+.input-fecha.activo span {
+  color: #111; /* negro */
+}
